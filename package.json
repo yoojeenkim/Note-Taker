@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/yoojeenkim/Note-Taker/issues"
   },
-  "homepage": "https://github.com/yoojeenkim/Note-Taker#readme"
+  "homepage": "https://github.com/yoojeenkim/Note-Taker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
