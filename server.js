@@ -20,10 +20,4 @@ app.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
-app.get('/api/notes', (req, res) => {
-    res.status(200).json(`${req.method} request received to get notes.`);
-
-    console.info(`${req.method} request received to get notes`);
-});
-
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
