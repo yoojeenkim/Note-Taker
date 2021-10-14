@@ -6,12 +6,12 @@ route.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-route.delete('/:note_id', (req, res) => {
-    const noteId = req.params.note_id;
+route.delete('/:id', (req, res) => {
+    const noteId = req.params.id;
     readFromFile('./db/db.json')
         .then((data) => JSON.parse(data))
         .then((json) => {
-            const result = json.filter((note) => note.note_id !== noteId);
+            const result = json.filter((note) => note.id !== noteId);
 
             writeToFile('./db/db.json', result);
 
@@ -28,7 +28,7 @@ route.post('/', (req, res) => {
         const newNote = {
             title,
             text,
-            note_id: uuid(),
+            id: uuid(),
         };
 
         readAndAppend(newNote, './db/db.json');
